@@ -68,10 +68,10 @@ PKGFILE="${OMARCHY_DIR}/install/omarchy-base.packages"
 
 # Remove packages unavailable on aarch64
 for pkg in omarchy-walker omarchy-nvim 1password-beta 1password-cli \
-           spotify typora gpu-screen-recorder kernel-modules-hook; do
+           spotify gpu-screen-recorder kernel-modules-hook; do
     sed -i "/^${pkg}$/d" "${PKGFILE}"
 done
-ok "Removed 8 unavailable packages"
+ok "Removed 7 unavailable packages"
 
 # Add aarch64-compatible packages
 for pkg in fuzzel ncspot pipewire pipewire-alsa pipewire-pulse pipewire-jack; do

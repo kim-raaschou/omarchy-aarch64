@@ -21,7 +21,7 @@ curl -fsSL https://raw.githubusercontent.com/kim-raaschou/omarchy-aarch64/main/s
 1. Clones `basecamp/omarchy` (dev branch)
 2. Patches for aarch64:
    - **guard.sh** — allows aarch64 (removes x86_64/limine/btrfs checks)
-   - **Package list** — removes 8 unavailable packages, adds fuzzel + pipewire
+   - **Package list** — removes 7 unavailable packages, adds fuzzel + ncspot + pipewire
    - **Keybinding** — SUPER+Space launches fuzzel instead of Walker
 3. Installs all packages (official via pacman, AUR via yay)
 4. Deploys configs, themes, and 70+ bin scripts
@@ -41,7 +41,7 @@ curl -fsSL https://raw.githubusercontent.com/kim-raaschou/omarchy-aarch64/main/s
 
 ### Removed packages (x86_64 only)
 
-`omarchy-walker` `omarchy-nvim` `1password-beta` `1password-cli` `spotify` (replaced by ncspot) `typora` `gpu-screen-recorder` `kernel-modules-hook`
+`omarchy-walker` `omarchy-nvim` `1password-beta` `1password-cli` `spotify` (replaced by ncspot) `gpu-screen-recorder` `kernel-modules-hook`
 
 ### Added packages
 

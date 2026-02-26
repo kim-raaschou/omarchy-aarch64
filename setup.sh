@@ -74,12 +74,12 @@ done
 ok "Removed 8 unavailable packages"
 
 # Add aarch64-compatible packages
-for pkg in fuzzel pipewire pipewire-alsa pipewire-pulse pipewire-jack; do
+for pkg in fuzzel ncspot pipewire pipewire-alsa pipewire-pulse pipewire-jack; do
     if ! grep -q "^${pkg}$" "${PKGFILE}"; then
         echo "${pkg}" >> "${PKGFILE}"
     fi
 done
-ok "Added aarch64 packages (fuzzel, pipewire)"
+ok "Added aarch64 packages (fuzzel, ncspot, pipewire)"
 
 # =========================================================================
 # Step 5: Create build user (makepkg/yay refuse to run as root)
@@ -208,6 +208,12 @@ if ! grep -q 'fuzzel' "${BINDINGS}" 2>/dev/null; then
     printf '\n# App launcher (fuzzel replaces walker on aarch64)\nunbind = SUPER, SPACE\nbindd = SUPER, SPACE, App launcher, exec, fuzzel\n' >> "${BINDINGS}"
 fi
 ok "SUPER+Space -> fuzzel"
+
+# Music: ncspot replaces spotify (TUI client)
+if ! grep -q 'ncspot' "${BINDINGS}" 2>/dev/null; then
+    printf '\n# Music (ncspot replaces spotify on aarch64)\nunbind = SUPER SHIFT, M\nbindd = SUPER SHIFT, M, Music, exec, omarchy-launch-tui ncspot\n' >> "${BINDINGS}"
+fi
+ok "SUPER+SHIFT+M -> ncspot"
 
 # =========================================================================
 # Step 13: SDDM (login manager + auto-login)

@@ -34,17 +34,18 @@ curl -fsSL https://raw.githubusercontent.com/kim-raaschou/omarchy-aarch64/main/s
 | Component | Upstream | aarch64 |
 |-----------|----------|----------|
 | App launcher | Walker | Fuzzel |
+| Music | Spotify | ncspot (TUI) |
 | Architecture | x86_64 only | aarch64 |
 | Boot | Limine + btrfs | Any |
 | Root | Blocked | Allowed (WLR_ALLOW_ROOT) |
 
 ### Removed packages (x86_64 only)
 
-`omarchy-walker` `omarchy-nvim` `1password-beta` `1password-cli` `spotify` `typora` `gpu-screen-recorder` `kernel-modules-hook`
+`omarchy-walker` `omarchy-nvim` `1password-beta` `1password-cli` `spotify` (replaced by ncspot) `typora` `gpu-screen-recorder` `kernel-modules-hook`
 
 ### Added packages
 
-`fuzzel` `pipewire` `pipewire-alsa` `pipewire-pulse` `pipewire-jack`
+`fuzzel` `ncspot` `pipewire` `pipewire-alsa` `pipewire-pulse` `pipewire-jack`
 
 ## Known limitations
 
